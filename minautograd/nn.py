@@ -13,8 +13,8 @@ class Module:
 class Neuron(Module):
     def __init__(self, input_params: int, activation: bool = True) -> None:
         super().__init__()
-        self.w = [Variable(random.uniform(-1,1)) for i in range(input_params)]
-        self.bias = Variable(0)
+        self.w = [Variable(random.uniform(-1,1), label=f"w") for i in range(input_params)]
+        self.bias = Variable(0, label="b")
         self.activation = activation
     
     def parameters(self):
